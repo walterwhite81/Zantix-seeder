@@ -186,7 +186,7 @@ extern "C" void* ThreadCrawler(void* data) {
       res.nClientV = 0;
       res.nHeight = 0;
       res.strClientV = "";
-      bool getaddr = res.ourLastSuccess + 86400 < now;
+      bool getaddr = res.ourLastSuccess + 3600 < now;
       res.fGood = TestNode(res.service,res.nBanTime,res.nClientV,res.strClientV,res.nHeight,getaddr ? &addr : NULL);
     }
     db.ResultMany(ips);
@@ -407,7 +407,7 @@ static const string *seeds = mainnet_seeds;
 extern "C" void* ThreadSeeder(void*) {
   if (!fTestNet){
     //db.Add(CService("kjy2eqzk4zwi5zd3.onion", 24400), true);
-    //db.Add(CService("10.0.1.4", 24400), true);
+    db.Add(CService("40.114.69.31", 24400), true);
   }
   do {
     for (int i=0; seeds[i] != ""; i++) {
