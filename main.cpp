@@ -40,7 +40,7 @@ public:
                               "\n"
                               "Options:\n"
                               "-h <host>       Hostname of the DNS seed\n"
-                              "-n <ns>         Hostname of the nameserver\n"
+                              "-n <ns>         IP address of this machine\n"
                               "-m <mbox>       E-Mail address reported in SOA records\n"
                               "-t <threads>    Number of crawlers to run in parallel (default 96)\n"
                               "-d <threads>    Number of DNS server threads (default 4)\n"
@@ -401,7 +401,7 @@ extern "C" void* ThreadStats(void*) {
 }
 
 static const string mainnet_seeds[] = {"seed1.strangled.net", ""};
-static const string testnet_seeds[] = {""};
+static const string testnet_seeds[] = {"test.strangled.net", ""};
 static const string *seeds = mainnet_seeds;
 
 extern "C" void* ThreadSeeder(void*) {
