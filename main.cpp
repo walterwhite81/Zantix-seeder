@@ -400,14 +400,14 @@ extern "C" void* ThreadStats(void*) {
   return nullptr;
 }
 
-static const string mainnet_seeds[] = {""};
+static const string mainnet_seeds[] = {"seed1.strangled.net",""};
 static const string testnet_seeds[] = {""};
 static const string *seeds = mainnet_seeds;
 
 extern "C" void* ThreadSeeder(void*) {
   if (!fTestNet){
     //db.Add(CService("kjy2eqzk4zwi5zd3.onion", 24400), true);
-     db.Add(CService("10.0.1.4", 24400), true);
+    //db.Add(CService("10.0.1.4", 24400), true);
   }
   do {
     for (int i=0; seeds[i] != ""; i++) {
